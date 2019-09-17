@@ -14,7 +14,10 @@ class Stack(object):
 
     def peek(self):
         """返回栈顶元素"""
-        return self.__list[-1]
+        if self.__list:
+            return self.__list[-1]
+        else:
+            return None
 
     def is_empty(self):
         """判断栈是否为空"""
