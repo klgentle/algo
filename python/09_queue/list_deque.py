@@ -1,3 +1,6 @@
+# from collections import deque
+
+
 class Deque(object):
     """双端队列"""
 
