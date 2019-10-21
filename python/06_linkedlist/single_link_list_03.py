@@ -103,6 +103,16 @@ class SingleLinkList(object):
                 cur = cur.next
         return False 
 
+    def rev(self):
+        """link reverse"""
+        p = None
+        while self.__head is not None:
+            q = self.__head
+            self.__head = q.next    # 摘下原来的首结点
+            q.next = p
+            p = q   # 将刚摘下的结点加入P引用的结点序列
+        self.__head = p # 反转后的结点序列已经做好，重置表头链接
+
 
 if __name__ == "__main__":
     ll = SingleLinkList()
@@ -128,4 +138,6 @@ if __name__ == "__main__":
     ll.remove(8)
     ll.travel()
     ll.remove(200)
+    ll.travel()
+    ll.rev()
     ll.travel()
